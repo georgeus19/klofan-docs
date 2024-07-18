@@ -19,7 +19,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/editor">
+            to="/editor/index.html">
             Go to live instance ⏱️
           </Link>
         </div>
