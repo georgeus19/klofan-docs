@@ -18,7 +18,7 @@ state of Editor with no data after opening it.
 
 We use the `Import` button in the header on the top of the page and
 upload the file with the food product data described in the previous
-section located at [`https://github.com/georgeus19/klofan/data/example/food3.json`](https://github.com/georgeus19/klofan/data/example/food3.json). The import
+section located at [`https://github.com/georgeus19/klofan/blob/main/data/example/food3.json`](https://github.com/georgeus19/klofan/blob/main/data/example/food3.json). The import
 functionality currently supports uploading JSON and CSV files.
 
 The import produces some boxes and arrows that are stacked on top of

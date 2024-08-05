@@ -39,7 +39,7 @@ MUST be in the root of the repo with name `.docker-env`. Go to `localhost/index.
 
 ## Upload Datasets
 
-The datasets needed for the tutorial are saved at `klofan/data/example/catalog.ttl` or [here](https://github.com/georgeus19/klofan/data/example/catalog.ttl). If the default configuration file is used, the following command can be used to load the datasets to the system.
+The datasets needed for the tutorial are saved at `klofan/data/example/catalog.ttl` or [https://github.com/georgeus19/klofan/blob/main/data/example/catalog.ttl](https://github.com/georgeus19/klofan/blob/main/data/example/catalog.ttl). If the default configuration file is used, the following command can be used to load the datasets to the system.
 
 ```bash
 # Run from `klofan` directory
