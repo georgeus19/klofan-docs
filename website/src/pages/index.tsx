@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
+import Workflow from '@site/static/img/workflow.drawio.svg'
 
 import styles from './index.module.css';
 
@@ -16,34 +16,40 @@ function HomepageHeader() {
           {siteConfig.title}
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/editor/index.html">
-            Go to live instance ⏱️
-          </Link>
-        </div>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/tutorial/intro">
-            Checkout out our tutorial ⏱️
-          </Link>
+
+        <div className='container'>
+          <div className={clsx('row', styles.bts)}>
+              <Link
+              className={clsx(styles.buttons, styles.live, "button button--secondary button--lg")}
+                to="/editor/index.html">
+                Live Instance
+              </Link>
+            <Link
+              className={clsx(styles.buttons, styles.tutorial, "button button--secondary button--lg")}
+                to="/docs/tutorial/intro">
+                Tutorial
+              </Link>
+
+          </div>
+
         </div>
       </div>
     </header>
   );
 }
+//⏱️
 
 export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title}`}
-      description="System for interactive transformation of structured data to RDF">
+    title='Home'
+    description="System for interactive transformation of structured data to RDF">
       <HomepageHeader />
+      
       <main>
-        <HomepageFeatures />
+          <Workflow id='workflow' className={ clsx(styles.featureSvg, styles.workflow, styles.featureSvg)} role='img'></Workflow>
+        {/* <HomepageFeatures /> */}
       </main>
     </Layout>
   );
