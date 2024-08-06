@@ -11,7 +11,7 @@ in Editor. They are listed chronologically from top to bottom.
 
 ## How are input data represented in the system?
 
-We start by opening Editor on `localhost/index.html` (or [https://klofan.linkedpipes.com](https://klofan.linkedpipes.com)). The picture below shows the initial
+We start by opening Editor on `localhost/index.html` (or [https://klofan.linkedpipes.com/editor](https://klofan.linkedpipes.com/editor)). The picture below shows the initial
 state of Editor with no data after opening it.
 
 ![Initial State](/img/tutorial/editor-start.png)

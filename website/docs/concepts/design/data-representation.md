@@ -31,7 +31,7 @@ by for example using a join mapping.
 ## Representation Requirements
 
 We present the requirements that we have for the representation of the
-input data (i.e. model). Based on the architecture () the data are used
+input data (i.e. model). Based on the discussed architecture the data are used
 in Editor and Recommender containers. Editor is meant to be a JavaScript
 frontend application.
 
@@ -140,7 +140,7 @@ property in the schema which represents the set of properties at the
 corresponding position in the data.
 
 This presented schema structure can be encoded in multiple ways. We
-discuss these ways with respect to the requirements (). A
+discuss these ways with respect to the requirements above. A
 straightforward solution is to represent exactly as it is shown above by
 having a tree of objects representing entity sets where its properties
 are property sets. This representation, however, does not allow storing
@@ -339,7 +339,7 @@ mapping must be specified based on some rules so that the transformation
 can be run on any data with the same schema. For example, a join,
 preservation, one-to-one mapping options.
 
-## Data Model Component View {#ss:model-component-view}
+## Data Model Component View
 
 In the last subsection, we discussed that the model representing the
 structured data is split into a schema and instances. We discussed
@@ -386,7 +386,7 @@ transformations. The correct synchronization of schema and instances is
 then done by this component and consumers need only to call the factory
 methods to create desired transformations objects.
 
-These components are shown in . Unsuprisingly, Transform is needs to
+These components are shown in the picture below. Unsuprisingly, Transform is needs to
 access schema and instances to create their transformation and both
 Schema and Instances are loaded from a tree structure that is created by
 Parse. Instances does not include the structure of the structured data

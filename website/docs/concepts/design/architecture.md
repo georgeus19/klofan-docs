@@ -15,7 +15,7 @@ communication between one and more components or communication with
 databases whose exact description would unnecessarily complicate the
 idea of the simplified architectures.
 
-We model all architectures in the C4 model [@c4-model-web]. The
+We model all architectures in the [C4 model](https://c4model.com/). The
 terminology is slightly different from other models. Components are
 static blocks of related functionality encapsulated by a well-defined
 interface. Containers are runtime deployable units that execute codes or
@@ -54,7 +54,7 @@ following.
 
 Perhaps the simplest architecture is to group the main components in a
 single container and have only one store for all kinds of data. The
-architecture in groups Catalog, Analyzers and Recommenders into a single
+architecture in the picture below groups Catalog, Analyzers and Recommenders into a single
 container named Catalog whose main function is to let administrators
 upload datasets for analysis and provide recommendations for Editor. Any
 data used by Catalog is stored in a RDF triplestore.
@@ -63,8 +63,8 @@ data used by Catalog is stored in a RDF triplestore.
 
 Having the three main components in one container does not mean that the
 respective functionality is interlinked in a black box. Instead, the
-Catalog container contains Dataset Uploader, Analyzers and Recommenders
-components as shown in ). Dataset Uploader receives any uploaded dataset
+Catalog container contains Dataset Manager, Analyzers and Recommenders
+components as shown in the picture below. Dataset Manager receives any uploaded dataset
 by a user, retrieves its data and saves both in the triplestore.
 Afterwards, it notifies Analyzers that new data were uploaded, where
 they are in the triplestore (e.g. identified by graph URIs) and that
@@ -136,7 +136,7 @@ monolithic architecture. The previous Catalog monolith container is
 split into new containers - Catalog container and a group of Recommender
 containers. Since we found having a single RDF triplestore non-optimal,
 we consider a triplestore only for datasets and separate stores for
-analyses. This architecture is shown in . Catalog provides API for
+analyses. This architecture is shown in the picture below. Catalog provides API for
 uploading datasets which are forwarded to each Recommender container and
 saved in Dataset Triplestore. A Recommender container fetches dataset
 data and analyses them. Created analyses are saved in Recommendation
@@ -156,7 +156,7 @@ retrieval system.
 
 Since a Recommender container has both analyze and recommend
 responsibilities, it consists of Analyzer and Recommender component
-which handle their corresponding responsibilities (see ).
+which handle their corresponding responsibilities (see the picture below).
 
 ![Recommender Component View](/img/concepts/recommenders-component-view.png)
 
@@ -216,7 +216,7 @@ recommender functionality together in one runtime container. Therefore,
 we have a group of Analyzer containers which perform analyses and save
 them in Analyses Stores as well as a group of Recommender containers
 which can retrieve said analysis from the stores and provide
-recommendations for Editor. This architecture is shown in . The rest is
+recommendations for Editor. This architecture is shown in the picture below. The rest is
 the same as before in Recommender Container Architecture; hence, we skip
 further description.
 
@@ -240,7 +240,7 @@ architectures discussed before.
 
 ## Final Architecture
 
-In this section, we derive the final architecture of the system. All of
+In this subsection, we derive the final architecture of the system. All of
 the previous architectures were focused on how to represent the main
 components and on the high-level communication among them. While
 drafting architectures on such a level is useful for presenting the main
@@ -306,7 +306,7 @@ dataset was started.
 Therefore, we consider the notion of sending general notifications.
 Catalog can pass a list of notification requirements along with datasets
 to Analyzer Manager. An example of such a requirement could be that
-Catalog wants to receive provenance in PROV Ontology [@provo-web] when
+Catalog wants to receive provenance in [PROV Ontology](https://www.w3.org/TR/prov-o/) when
 analysis is done. Each such requirement must contain the address of the
 target and when the notification should be sent. These requirements are
 passed to the analyzer queue along with datasets. Then, when an analyzer
@@ -344,8 +344,7 @@ details related to storing analyses.
 
 The only exception is when the essence of an analyzer or a recommender
 is dependent on a external system such as recommending based on
-full-text search using an information retrieval system such as
-Elasticsearch [@elasticsearch-web]. However, analyses from such an
+full-text search using an information retrieval system such as [Elasticsearch](https://www.elastic.co/elasticsearch). However, analyses from such an
 analyzer are still always sent to Analyses Store describing, for
 example, the full-text index name that a recommender should use.
 
@@ -359,7 +358,7 @@ concepts are added.
 
 ![Final Architecture of the System](/img/concepts/final-architecture.png)
 
-The architecture is shown in . There are two main workflows - uploading
+The architecture is shown in the picture above. There are two main workflows - uploading
 datasets to Catalog in order to analyze them and requesting
 recommendations from Editor. A system administrator uploads DCAT
 datasets to Catalog which stores them and sends them to Analyzer

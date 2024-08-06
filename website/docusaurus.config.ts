@@ -70,7 +70,6 @@ const config: Config = {
           position: 'left',
           label: 'Tutorial',
         },
-        // {to: '/blog', label: 'Blog', position: 'left'},
         {
           type: 'docSidebar',
           sidebarId: 'conceptsSidebar',
@@ -127,7 +126,7 @@ const config: Config = {
       //     ],
       //   },
       // ],
-      copyright: ` `,
+      copyright: `Created by Kryštof Hrubý`,
     },
     prism: {
       theme: prismThemes.github,

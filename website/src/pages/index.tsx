@@ -22,7 +22,7 @@ function HomepageHeader() {
               <Link
               className={clsx(styles.buttons, styles.live, "button button--secondary button--lg")}
                 to="/editor/index.html">
-                Live Instance
+                Editor
               </Link>
             <Link
               className={clsx(styles.buttons, styles.tutorial, "button button--secondary button--lg")}
