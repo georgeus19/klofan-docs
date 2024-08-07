@@ -21,7 +21,7 @@ function HomepageHeader() {
           <div className={clsx('row', styles.bts)}>
               <Link
               className={clsx(styles.buttons, styles.live, "button button--secondary button--lg")}
-                to="/editor/index.html">
+                to="https://klofan.linkedpipes.com/editor/index.html">
                 Editor
               </Link>
             <Link
